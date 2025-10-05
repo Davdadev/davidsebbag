@@ -2,7 +2,7 @@
   	width: 1012px;
   	position: relative;
   	font-size: 112.56px;
-  	font-family: 'Inknut Antiqua';
+  	font-family: 'Kanit';
   	color: #000;
   	text-align: left;
   	display: inline-block;
@@ -18,7 +18,7 @@
 height: 118px;
 flex-shrink: 0;
 color: #000;
-font-family: "Inknut Antiqua";
+font-family: "Kanit";
 font-size: 48px;
 font-style: normal;
 font-weight: 400;
@@ -36,7 +36,7 @@ position: absolute;
  
 	
   color: rgba(98, 162, 168, 0.89);
-font-family: "Inknut Antiqua";
+font-family: "Kanit";
 font-size: 48px;
 font-style: normal;
 font-weight: 400;
