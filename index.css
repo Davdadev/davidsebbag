@@ -2,7 +2,7 @@
   	width: 1012px;
   	position: relative;
   	font-size: 112.56px;
-  	font-family: 'Kanit';
+    font-family: 'Kanit', sans-serif;
   	color: #000;
   	text-align: left;
   	display: inline-block;
@@ -18,7 +18,7 @@
 height: 118px;
 flex-shrink: 0;
 color: #000;
-font-family: "Kanit";
+font-family: "Kanit", sans-serif;
 font-size: 48px;
 font-style: normal;
 font-weight: 400;
