@@ -1,0 +1,84 @@
+.david-sebbag {
+  	width: 1012px;
+  	position: relative;
+  	font-size: 112.56px;
+  	font-family: 'Inknut Antiqua';
+  	color: #000;
+  	text-align: left;
+  	display: inline-block;
+    left: 27px;
+  top: -10px;
+
+}
+.cmo {
+
+ 
+	
+  	width: 996px;
+height: 118px;
+flex-shrink: 0;
+color: #000;
+font-family: "Inknut Antiqua";
+font-size: 48px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+position: absolute;
+  left: 500px;
+  top: 138px;
+ 
+
+
+
+}
+.shenanigans {
+
+ 
+	
+  color: rgba(98, 162, 168, 0.89);
+font-family: "Inknut Antiqua";
+font-size: 48px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+  top: 138px;
+ 
+
+
+
+}
+
+
+
+
+
+
+.wiggle-logo {
+  display: inline-block;
+  animation: wiggle 0.5s infinite;
+ display: flex;
+width: 360.192px;
+height: 114.789px;
+justify-content: center;
+align-items: center;
+flex-shrink: 0;
+
+  position: absolute;
+  left: 900px;
+  top: 15px;
+  bottom: 2012px;
+  right: 4902px;
+ 
+
+
+ 
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(-2deg); }
+  20% { transform: rotate(1deg); }
+  40% { transform: rotate(2deg); }
+  60% { transform: rotate(-1deg); }
+  80% { transform: rotate(-2deg); }
+  100% { transform: rotate(-2deg); }
+}
