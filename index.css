@@ -98,8 +98,8 @@ flex-shrink: 0;
   color: #000000;
 }
 .container {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background: linear-gradient(
       to bottom,
       #fff 0%,
@@ -107,8 +107,11 @@ flex-shrink: 0;
       rgba(255, 255, 255, 0) 100%
     ),
     linear-gradient(to right, #5E9296, #7AC2C8, #69D3D6, #6CDCE6, #92F6FF);
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   overflow: hidden;
+  z-index: 0;
 }
 
 .container::before {
