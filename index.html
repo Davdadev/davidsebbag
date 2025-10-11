@@ -13,15 +13,51 @@
 <body>
   	<div class="container"></div>
 
-  	<div class="david-sebbag">DAVID SEBBAG</div>
-<div class="cmo">
-<span>certified master of </span>
-<span class="shenanigans">shenanigans</span>
-</div>
-    <img src="glasses.svg" class="wiggle-logo" alt="Glasses Logo">
+  	
+		<div class="david-sebbag">DAVID SEBBAG</div>
+		<img src="glasses.svg" class="wiggle-logo" alt="Glasses Logo">
+	
   <h1 class="h1">Years of experience in areas like:<br><ul><li>Finding loopholes</li><li>Circumventing the system and network</li><LI>Risk analysis </LI><li>Creative problem solving</li><li>Business creation, development, and operations</li><li>ui/ux design </li>Software like:<li>Figma</li><li>AutoDesk Fusion</li><li>html AND CSS</li></ul> </h1>
   	
   	
   	
 </body>
 </html>
+<script>
+// Keep .david-sebbag exactly 1px to the right of .wiggle-logo
+(function(){
+	const logo = document.querySelector('.wiggle-logo');
+	const title = document.querySelector('.david-sebbag');
+	if (!logo || !title) return;
+
+	// ensure title is positioned absolutely so we can place it by coordinates
+	title.style.position = 'absolute';
+
+	function place() {
+		const r = logo.getBoundingClientRect();
+		const docLeft = window.scrollX || window.pageXOffset;
+		const docTop = window.scrollY || window.pageYOffset;
+
+		// place title 1px to the right of logo, align top with logo (no vertical offset)
+		const left = Math.round(r.right + docLeft + 1);
+		const top  = Math.round(r.top + docTop - 9);
+
+		title.style.left = left + 'px';
+		title.style.top  = top + 'px';
+	}
+
+	// initial placement
+	place();
+
+	// update on scroll and resize
+	window.addEventListener('scroll', place, { passive: true });
+	window.addEventListener('resize', place);
+
+	// if logo size changes, reposition using ResizeObserver (modern browsers)
+	if (window.ResizeObserver) {
+		const ro = new ResizeObserver(place);
+		ro.observe(logo);
+		ro.observe(title);
+	}
+})();
+</script>
