@@ -35,7 +35,7 @@
   	flex-shrink: 0;
     max-width: fit-content;
     
-    font-size: clamp(14px, 15vw, 500px);
+    font-size: clamp(14px, 15vw, 15rem);
 }
 
 
