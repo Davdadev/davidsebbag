@@ -41,7 +41,7 @@
  position: absolute;
  
   top: 1rem;
-  left: 2rem;
+  left: 1rem;
   height: clamp(2.5rem, 6vw, 5000rem);
 }
 
