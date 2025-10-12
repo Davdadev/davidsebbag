@@ -29,7 +29,7 @@
   top: 90px;
   width: 90%;
   height: 20%;
-  	overflow: show;
+  	overflow: visible;
   	height: 147px;
   	position: relative;
   	display: inline-block;
