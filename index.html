@@ -23,7 +23,7 @@
 <div class="vector-paren1">
 	
 	<img src="main.svg" class="mainlogo" alt="Main Logo">
-	<div data-value="HACKING THE SYSTEM" class="maintxt">HACKING THE SYSTEM</div>
+	<div data-value="HACKING THE SYSTEM" class="maintxt">FINDING LOOPHOLES‎</div>
 
 			</div>
 		</div>
@@ -85,28 +85,54 @@ const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ12334567890!@#$%^&*";
 
 let interval = null;
 
-document.querySelector(".maintxt").onmouseover = event => {  
-  let iteration = 0;
-  
-  clearInterval(interval);
-  
-  interval = setInterval(() => {
-    event.target.innerText = event.target.innerText
-      .split("")
-      .map((letter, index) => {
-        if(index < iteration) {
-          return event.target.dataset.value[index];
-        }
+// cache the element and its original text so we can restore it after the animation
+const maintxtEl = document.querySelector(".maintxt");
+const originalMaintxt = maintxtEl ? maintxtEl.innerText : "findingf loopholes";
+
+if (maintxtEl) {
+	// prevent re-entering the animation while it's already running
+	let isAnimating = false;
+	let isHovered = false;
+	let isFinished = false; // becomes true when the animation completes
+
+	maintxtEl.addEventListener("mouseenter", event => {  
+		isHovered = true;
+		if (isAnimating) return;
+		isAnimating = true;
+		isFinished = false;
+
+		let iteration = 0;
+    
+		clearInterval(interval);
+    
+		interval = setInterval(() => {
+			event.target.innerText = event.target.innerText
+				.split("")
+				.map((letter, index) => {
+					if(index < iteration) {
+						return event.target.dataset.value[index];
+					}
+					return letters[Math.floor(Math.random() * letters.length)];
+				})
+				.join("");
       
-        return letters[Math.floor(Math.random() * 44)]
-      })
-      .join("");
-    
-    if(iteration >= event.target.dataset.value.length){ 
-      clearInterval(interval);
-    }
-    
-    iteration += 1 / 3;
-  }, 25);
+			if(iteration >= event.target.dataset.value.length){ 
+				clearInterval(interval);
+				// mark animation finished but DO NOT restore here if hovered
+				isFinished = true;
+				isAnimating = false;
+			}
+			iteration += 1 / 3;
+		}, 25);
+	});
+
+	maintxtEl.addEventListener("mouseleave", event => {
+		isHovered = false;
+		// only restore when the animation has finished
+		if (isFinished && event.target.innerText !== originalMaintxt) {
+			event.target.innerText = originalMaintxt;
+			isFinished = false;
+		}
+	});
 }
 </script>
