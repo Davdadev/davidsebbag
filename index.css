@@ -28,7 +28,8 @@
 .maintxt {
   top: 90px;
   width: 90%;
-  	align-self: stretch;
+  height: 20%;
+  	overflow: show;
   	height: 147px;
   	position: relative;
   	display: inline-block;
