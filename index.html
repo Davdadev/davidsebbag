@@ -13,13 +13,32 @@
 <body>
   	<div class="container"></div>
 
-  	
+  	<div class="content">
 		<div class="david-sebbag">DAVID SEBBAG</div>
+		
 		<img src="glasses.svg" class="wiggle-logo" alt="Glasses Logo">
+		
+		<div class="frame-parent">
+		
+<div class="vector-paren1">
 	
-  <h1 class="h1">Years of experience in areas like:<br><ul><li>Finding loopholes</li><li>Circumventing the system and network</li><LI>Risk analysis </LI><li>Creative problem solving</li><li>Business creation, development, and operations</li><li>ui/ux design </li>Software like:<li>Figma</li><li>AutoDesk Fusion</li><li>html AND CSS</li></ul> </h1>
-  	
-  	
+	<img src="main.svg" class="mainlogo" alt="Main Logo">
+	<div data-value="HACKING THE SYSTEM" class="maintxt">HACKING THE SYSTEM</div>
+
+			</div>
+		</div>
+
+  <h1 class="h1">Experience in programs and softwares like:</h1>
+<div class="vector-parent">
+<img class="figmasvg" src="figma.svg" alt="">
+<img class="htmlsvg" src="htmlsvg.svg" alt="">
+<img class="csssvg" src="csssvg.svg" alt="">
+<img class="githubsvg" src="githubsvg.svg" alt="">
+<img class="ausvg" src="ausvg.svg" alt="">
+<img class="pysvg" src="pysvg.svg" alt="">
+</div>
+
+</div>
   	
 </body>
 </html>
@@ -60,4 +79,34 @@
 		ro.observe(title);
 	}
 })();
+
+
+const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ12334567890!@#$%^&*";
+
+let interval = null;
+
+document.querySelector(".maintxt").onmouseover = event => {  
+  let iteration = 0;
+  
+  clearInterval(interval);
+  
+  interval = setInterval(() => {
+    event.target.innerText = event.target.innerText
+      .split("")
+      .map((letter, index) => {
+        if(index < iteration) {
+          return event.target.dataset.value[index];
+        }
+      
+        return letters[Math.floor(Math.random() * 44)]
+      })
+      .join("");
+    
+    if(iteration >= event.target.dataset.value.length){ 
+      clearInterval(interval);
+    }
+    
+    iteration += 1 / 3;
+  }, 25);
+}
 </script>

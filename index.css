@@ -1,9 +1,60 @@
+.frame-parent {
+  	width: 100%;
+  	height: 1024px;
+  	position: relative;
+  	
+  	overflow: hidden;
+  	text-align: center;
+  	font-size: 96px;
+  	color: #000;
+  	font-family: 'Space Mono', monospace;
+}
+.vector-parent1 {
+  	position: absolute;
+  	top: 50px;
+  	left: 158px;
+  	width: 1099px;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+}
+.mainlogo {
+  	width: 594.5px;
+  	height: 315px;
+  	position: relative;
+}
+.maintxt {
+  	align-self: stretch;
+  	height: 147px;
+  	position: relative;
+  	display: inline-block;
+  	flex-shrink: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .david-sebbag {
   	width: 100%;
   	position: relative;
     
-  	font-size: clamp(2.5rem, 6vw, 5000rem);
+  	font-size: clamp(1.9em, 2vw, 5rem);
     font-family: 'Kanit', sans-serif;
   	color: #000;
   	text-align: left;
@@ -14,19 +65,19 @@
 
 
 }
-@media (min-width: 1600px) {
+@media (max-width: 1100px) {
   .david-sebbag {
-    transform: translateY(-10px); /* moves it up 10px */
+    transform: translateY(+6px); /* moves it up 10px */
   }
 }
 @media (min-width: 1500px) {
   .david-sebbag {
-    transform: translateY(-9px); /* moves it up 9px */
+    transform: translateY(-0px); /* moves it up 9px */
   }
 }
 @media (min-width: 1700px) {
   .david-sebbag {
-    transform: translateY(-12px); /* moves it up 12px */
+    transform: translateY(-2px); /* moves it up 12px */
   }
 }
 
@@ -42,7 +93,7 @@
  
   top: 1rem;
   left: 1rem;
-  height: clamp(2.5rem, 6vw, 5000rem);
+  height: clamp(1.9em, 1.7vw, 5rem);
 }
 
 @keyframes wiggle {
@@ -55,18 +106,18 @@
 }
 .h1 {
   position: absolute;
-  width: 1012px;
-  height: 118px;
-  left: 27px;
-  top: 170px;
+  left: 0;
+  top: 70%;
+  margin-top: 0.5em;
+  left: 30px;
   max-width: fit-content;
   font-family: 'Kanit', sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 30px;
+  font-size: clamp(1rem, 2vw, 4rem);
   line-height: normal;
-
   color: #000000;
+  /* Ensure it stays under the logo+txt even when they resize */
 }
 .container {
   
@@ -103,4 +154,42 @@
     rgba(0, 0, 0, 1) 0%,
     rgba(0, 0, 0, 0) 70%
   );
+}
+.vector-parent {
+  	position: relative;
+  	width: 100%;
+  	display: flex;
+  	align-items: center;
+    top: 350px;
+  	gap: 6px;
+}
+.figmasvg {
+  height: 45px;
+  width: 35px;
+  position: relative;
+}
+.htmlsvg {
+  height: 45px;
+  width: 53px;
+  position: relative;
+}
+.csssvg {
+  height: 53px;
+  width: 46.4px;
+  position: relative;
+}
+.githubsvg {
+  height: 53px;
+  width: 53px;
+  position: relative;
+}
+.ausvg {
+  height: 51.7px;
+  width: 53px;
+  position: relative;
+}
+.pysvg {
+  height: 53px;
+  width: 53.3px;
+  position: relative;
 }
