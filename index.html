@@ -41,9 +41,9 @@
       			<div class="frame-group">
 						<img class="frame-inner" alt="" id="github" src="./Frame 7.svg" data-link="https://github.com/davdadev">
         				
-        				<img class="maker-world-logo-icon" alt="" src="./maker-world.svg">
+        				<img class="maker-world-logo-icon" alt="" id="maker-world" src="./maker-world.svg" data-link="https://makerworld.com">
         				
-        				<img class="frame-icon" alt="" src="./Frame 6.svg">
+        				<img class="frame-icon" alt="" id="figma" src="./Frame 6.svg" data-link="https://frameicon.com">
         				
       			</div>
 				<img class="glasseslogo-1" src="./glasseslogo 1.png" alt="Glasses Logo">
@@ -60,6 +60,33 @@
 				frame.addEventListener("click", function () {
 						window.open("https://github.com/davdadev");
 				});
+				
+			}
+
+
+
+			var frame = document.getElementById("github");
+			if(frame) {
+				frame.addEventListener("click", function () {
+						window.open("https://github.com/davdadev");
+				});
+				
+			}
+
+			var frame = document.getElementById("maker-world");
+			if(frame) {
+				frame.addEventListener("click", function () {
+						window.open("https://makerworld.com/en/@user_2466880989");
+				});
+				
+			}
+
+			var frame = document.getElementById("figma");
+			if(frame) {
+				frame.addEventListener("click", function () {
+						window.open("https://figma.com/@davidsebbag");
+				});
+				
 			}
 	</script>
 </body>
