@@ -1,199 +1,176 @@
-.frame-parent {
-  	width: 100%;
-  	height: 1024px;
+.rectangle-parent {
+	width: 100%;
+	min-height: 100vh;
+	height: auto;
   	position: relative;
-  	
-  	overflow: hidden;
-  	text-align: center;
-  	font-size: 96px;
-  	color: #000;
-  	font-family: 'Space Mono', monospace;
-}
-.vector-parent1 {
-  	position: absolute;
-  	top: 50px;
-  	left: 158px;
-  	width: 1099px;
-  	display: flex;
-  	flex-direction: column;
-  	align-items: center;
-}
-.mainlogo {
-  top: 60px;
-  	width: 100%;
-  	height: 315px;
-  	position: relative;
-    max-width: fit-content;
-}
-.maintxt {
-  top: 90px;
-  width: 90%;
-  height: 20%;
-  	overflow: visible;
-  	height: 147px;
-  	position: relative;
-  	display: inline-block;
-  	flex-shrink: 0;
-    max-width: fit-content;
-    max-height: fit-content;
-    height: auto;
-    font-size: clamp(12px, 10vw, 13rem);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.david-sebbag {
-  	width: 100%;
-  	position: relative;
-    
-  	font-size: clamp(1.9em, 2vw, 5rem);
-    font-family: 'Kanit', sans-serif;
-  	color: #000;
+	background-color: #000;
+	overflow-x: hidden;
+	overflow-y: visible;
   	text-align: left;
+  	font-size: 64px;
+  	color: #fff;
+  	font-family: 'UT Boldonse Demo';
+}
+.frame-child {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	background-color: #000;
+	width: 100%;
+	height: 100%;
+}
+.frame-parent {
+  	position: absolute;
+  	top: 938px;
+  	left: 0px;
+	width: 100%;
+  	height: 1060px;
+  	overflow: hidden;
+}
+.frame-item {
+  	position: absolute;
+  	top: -16.22px;
+  	left: 0px;
+	width: 100%;
+	height: auto;
+  	overflow-x: auto;
+  	object-fit: contain;
+  	flex-shrink: 0;
+}
+.skills {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
   	display: inline-block;
-    height: clamp(2.5rem, 6vw, 5000rem);
-  	top: 1rem;
-  	max-width: fit-content;
-
-
+	width: 100%;
+  	height: 83px;
+  	flex-shrink: 0;
 }
-@media (max-width: 1100px) {
-  .david-sebbag {
-    transform: translateY(+6px); /* moves it up 10px */
-  }
+.header {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+	width: 100%;
+  	height: 100px;
 }
-@media (min-width: 1500px) {
-  .david-sebbag {
-    transform: translateY(-0px); /* moves it up 9px */
-  }
+.header-child {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	background-color: #000;
+	width: 100%;
+  	height: 100px;
 }
-@media (min-width: 1700px) {
-  .david-sebbag {
-    transform: translateY(-2px); /* moves it up 12px */
-  }
+.hi-im-david-parent {
+  	position: absolute;
+  	top: 113px;
+  	left: -1px;
+	width: 100%;
+	min-height: clamp(320px, 50vw, 842px);
+	height: auto;
+	overflow: visible;
+	font-size: clamp(64px, 10vw, 260px);
+  	color: #7ac2c8;
 }
-
-
-
-
-
-.wiggle-logo {
-  display: inline-block;
-  animation: wiggle 0.5s infinite;
- display: flex;
- position: absolute;
- 
-  top: 1rem;
-  left: 1rem;
-  height: clamp(1.9em, 1.7vw, 5rem);
+.hi-im-david {
+  	position: absolute;
+  	top: 0px;
+  	left: 0px;
+  	white-space: pre-wrap;
+  	display: inline-block;
+	width: 100%;
+	padding: 0 16px;
+	box-sizing: border-box;
+	max-width: 70%;
+	z-index: 1;
 }
-
-@keyframes wiggle {
-  0% { transform: rotate(-2deg); }
-  20% { transform: rotate(1deg); }
-  40% { transform: rotate(2deg); }
-  60% { transform: rotate(-1deg); }
-  80% { transform: rotate(-2deg); }
-  100% { transform: rotate(-2deg); }
-}
-.h1 {
-  position: absolute;
-  left: 0;
-  top: 70%;
-  margin-top: 0.5em;
-  left: 30px;
-  max-width: fit-content;
-  font-family: 'Kanit', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: clamp(1rem, 2vw, 4rem);
-  line-height: normal;
-  color: #000000;
-  /* Ensure it stays under the logo+txt even when they resize */
-}
-.container {
-  
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-      to bottom,
-      #fff 0%,
-      #fff 40%,
-      rgba(255, 255, 255, 0) 100%
-    ),
-    linear-gradient(to right, #5E9296, #7AC2C8, #69D3D6, #6CDCE6, #92F6FF);
-  position: fixed;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(90deg, #ccc 1px, transparent 1px);
-  background-size: 50px 100%;
-  pointer-events: none;
-  mask-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0) 70%
-  );
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0) 70%
-  );
-}
-.vector-parent {
-  	position: relative;
-  	width: 100%;
+.frame-group {
+  	position: absolute;
+	top: 78%;
+	left: 64%;
+	transform: translate(-10%, -50%);
+	height: clamp(48px, 8vw, 88px);
+  	overflow: hidden;
   	display: flex;
   	align-items: center;
-    top: 350px;
-  	gap: 6px;
+  	padding: 0px 18px;
+  	box-sizing: border-box;
+	gap: clamp(16px, 4vw, 55px);
+	z-index: 3;
 }
-.figmasvg {
-  height: 45px;
-  width: 35px;
-  position: relative;
+.frame-inner {
+	height: clamp(36px, 7vw, 87px);
+	width: clamp(38px, 7.5vw, 90px);
+  	position: relative;
+  	cursor: pointer;
+  	flex-shrink: 0;
 }
-.htmlsvg {
-  height: 45px;
-  width: 53px;
-  position: relative;
+.maker-world-logo-icon {
+	width: clamp(40px, 7.8vw, 93px);
+  	position: relative;
+  	max-height: 100%;
+  	flex-shrink: 0;
 }
-.csssvg {
-  height: 53px;
-  width: 46.4px;
-  position: relative;
+.frame-icon {
+	height: clamp(36px, 7.2vw, 88px);
+	width: clamp(28px, 5.5vw, 61px);
+  	position: relative;
+  	flex-shrink: 0;
 }
-.githubsvg {
-  height: 53px;
-  width: 53px;
-  position: relative;
+.glasseslogo-1 {
+  	position: absolute;
+	top: -8%;
+	left: 40%;
+	transform: translateX(-10%);
+	width: clamp(180px, 32vw, 521px);
+	height: auto;
+  	object-fit: cover;
+	z-index: 4;
 }
-.ausvg {
-  height: 51.7px;
-  width: 53px;
-  position: relative;
+
+@media (max-width: 900px) {
+	.rectangle-parent {
+		font-size: 32px;
+	}
+	.hi-im-david-parent {
+		font-size: clamp(56px, 12vw, 140px);
+	}
+	.frame-parent {
+		top: 760px;
+		height: auto;
+	}
+	.frame-group {
+		left: 62%;
+		top: 80%;
+		transform: translate(-10%, -50%);
+	}
+	.glasseslogo-1 {
+		left: 58%;
+		width: clamp(160px, 45vw, 300px);
+	}
 }
-.pysvg {
-  height: 53px;
-  width: 53.3px;
-  position: relative;
+
+.skills-scroller {
+	will-change: transform;
+	white-space: nowrap;
+	width: max-content !important;
+	height: auto !important;
+	padding-top: 100px !important;
+	padding-bottom: 24px !important;
+	gap: 60px !important;
 }
+
+
+.frame-parent:hover .skills-scroller {
+	animation: skills-scroll 12s linear infinite;
+}
+
+@keyframes skills-scroll {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
+}
+
