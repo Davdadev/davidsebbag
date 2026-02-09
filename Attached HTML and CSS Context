@@ -1,0 +1,91 @@
+Attached HTML and CSS Context
+
+<div class="rectangle-parent">
+    		<div class="frame-child">
+    		</div>
+    		<div class="frame-parent">
+				<img class="frame-item" alt="" src="./frame-item.png">
+      			
+      			<div class="skills">Skills</div>
+				<div class="skills-scroller" style="width: 100%; height: 100%; padding-top: 175px; padding-bottom: 175px; overflow: hidden; justify-content: flex-start; align-items: center; gap: 320px; display: inline-flex">
+    <div style="color: white; font-size: 64px; font-family: UT Boldonse Demo; font-weight: 400; word-wrap: break-word">Coding 🧑‍💻</div>
+    <div style="color: white; font-size: 64px; font-family: UT Boldonse Demo; font-weight: 400; word-wrap: break-word">Web design 📊</div>
+    <div style="color: white; font-size: 64px; font-family: UT Boldonse Demo; font-weight: 400; word-wrap: break-word">Problem solving 🧩</div>
+    <div style="color: white; font-size: 64px; font-family: UT Boldonse Demo; font-weight: 400; word-wrap: break-word">App development 📱</div>
+    <div style="color: white; font-size: 64px; font-family: UT Boldonse Demo; font-weight: 400; word-wrap: break-word">Business 👔  </div>
+    <div><span style="color: white; font-size: 64px; font-family: UT Boldonse Demo; font-weight: 400; word-wrap: break-word">CAD and </span><span style="color: white; font-size: 96px; font-family: Alatsi; font-weight: 400; word-wrap: break-word">3</span><span style="color: white; font-size: 64px; font-family: UT Boldonse Demo; font-weight: 400; word-wrap: break-word">d modelling 💻</span></div>
+    <div><span style="color: white; font-size: 96px; font-family: Alatsi; font-weight: 400; word-wrap: break-word">3</span><span style="color: white; font-size: 64px; font-family: UT Boldonse Demo; font-weight: 400; word-wrap: break-word">d printing 🧱</span></div>
+    <div style="color: white; font-size: 64px; font-family: UT Boldonse Demo; font-weight: 400; word-wrap: break-word">Circumvention skills ⤴️ </div>
+</div>
+    		</div>
+    		<div class="header">
+      			<div class="header-child">
+      			</div>
+    		</div>
+    		<div class="hi-im-david-parent">
+      			<div class="hi-im-david">Hi I’m<br>    David</div>
+      			<div class="frame-group">
+						<img class="frame-inner" alt="" id="github" src="./Frame 7.svg" data-link="https://github.com/davdadev">
+        				
+        				<img class="maker-world-logo-icon" alt="" src="./maker-world.svg">
+        				
+        				<img class="frame-icon" alt="" src="./Frame 6.svg">
+        				
+      			</div>
+				<img class="glasseslogo-1" src="./glasseslogo 1.png" alt="Glasses Logo">
+      			
+    		</div>
+  	</div>
+
+
+/* Matched Rule from user-agent */
+div {
+  display: block;
+}
+
+/* Matched Rule from user-agent */
+address, blockquote, center, div, figure, figcaption, footer, form, header, hr, legend, listing, main, p, plaintext, pre, summary, xmp, article, aside, h1, h2, h3, h4, h5, h6, hgroup, nav, section, search, table, caption, colgroup, col, thead, tbody, tfoot, tr, td, th, dir, dd, dl, dt, menu, ol, ul, li, bdi, output, [dir="ltr" i], [dir="rtl" i], [dir="auto" i] {
+  unicode-bidi: isolate;
+}
+
+/* Matched Rule from regular */
+.rectangle-parent {
+  width: 100%;
+  height: 2383px;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+  text-align: left;
+  font-size: 64px;
+  color: #fff;
+  font-family: 'UT Boldonse Demo';
+  width: 100%;
+  height: 2383px;
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  overflow-x: hidden;
+  overflow-y: hidden;
+  text-align: left;
+  font-size: 64px;
+  color: rgb(255, 255, 255);
+  font-family: "UT Boldonse Demo";
+}
+
+/* Inherited from ancestor level 1 (user-agent) */
+body {
+  display: block;
+  margin-top: 8px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  margin-left: 8px;
+}
+
+/* Inherited from ancestor level 2 (user-agent) */
+html {
+  display: block;
+}
+
+/* Inherited from ancestor level 2 (user-agent) */
+:root {
+  view-transition-name: root;
+}
