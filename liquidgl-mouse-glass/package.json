@@ -1,0 +1,17 @@
+{
+  "name": "liquidgl-mouse-glass",
+  "version": "1.0.0",
+  "description": "A project that implements a liquid glass effect that follows the mouse cursor using the liquidGL library.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "live-server src"
+  },
+  "dependencies": {
+    "liquidGL": "^1.0.0"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  },
+  "author": "Davdadev",
+  "license": "MIT"
+}
