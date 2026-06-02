@@ -1,246 +1,218 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bg="ink" data-motif="cube" data-motion="calm" data-heading="display">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, width=device-width">
-    <title>David | Portfolio</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>David Sebbag — Developer & Maker</title>
+  <meta name="description" content="David Sebbag — developer and maker. I build web apps, bots, and 3D-printed things. Selected work in commerce, payments, and automation.">
+  <meta property="og:title" content="David Sebbag — Developer & Maker">
+  <meta property="og:description" content="I build web apps, bots, and 3D-printed things.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#06080a">
+  <link rel="icon" type="image/png" href="./glasseslogo 1.png">
 
-    <style>
-        :root {
-            --cube-size: clamp(250px, 35vw, 450px);
-            --accent-color: #7ac2c8;
-            --glass-bg: rgba(122, 194, 200, 0.08);
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Boldonse&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            overflow-x: hidden;
-            overflow-y: auto; 
-            font-family: "Boldonse", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-            color: #fff;
-        }
-
-        .cube-background {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: var(--cube-size);
-            height: var(--cube-size);
-            perspective: 1500px;
-            z-index: 1;
-            pointer-events: none; 
-            transition: opacity 0.1s ease-out; 
-        }
-
-        .cube {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            transform-style: preserve-3d;
-        }
-
-        .face {
-            position: absolute;
-            width: var(--cube-size);
-            height: var(--cube-size);
-            background: var(--glass-bg);
-            border: 1px solid rgba(122, 194, 200, 0.2);
-            backdrop-filter: blur(8px);
-        }
-
-        .front  { transform: rotateY(0deg) translateZ(calc(var(--cube-size) / 2)); }
-        .back   { transform: rotateY(180deg) translateZ(calc(var(--cube-size) / 2)); }
-        .right  { transform: rotateY(90deg) translateZ(calc(var(--cube-size) / 2)); }
-        .left   { transform: rotateY(-90deg) translateZ(calc(var(--cube-size) / 2)); }
-        .top    { transform: rotateX(90deg) translateZ(calc(var(--cube-size) / 2)); }
-        .bottom { transform: rotateX(-90deg) translateZ(calc(var(--cube-size) / 2)); }
-
-        .hero {
-            position: relative;
-            height: 101vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            z-index: 2;
-            pointer-events: none;
-        }
-
-        .hi-im-david {
-            font-size: clamp(80px, 15vw, 200px);
-            line-height: 1.4;
-            color: var(--accent-color);
-            text-transform: uppercase;
-            margin: 0;
-            padding: 0 20px;
-            user-select: none;
-        }
-
-        .social-icons {
-            margin-top: 30px;
-            display: flex;
-            gap: 30px;
-            align-items: center; /* Ensures icons stay centered together */
-            pointer-events: auto;
-        }
-
-        .social-icons img {
-            width: clamp(40px, 6vw, 70px);
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        /* Specific fix to make Figma logo smaller */
-        .figma-icon {
-            width: clamp(30px, 4.5vw, 52px) !important;
-        }
-
-        .social-icons img:hover { transform: scale(1.2); }
-
-        .skills-container {
-            width: 100%;
-            background: rgba(0,0,0,0.6);
-            backdrop-filter: blur(15px);
-            padding: 70px 0;
-            margin-top: 120px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            position: relative;
-            z-index: 4;
-        }
-
-        .skills-scroller {
-            display: flex;
-            gap: 150px;
-            white-space: nowrap;
-            animation: scroll 12s linear infinite;
-        }
-
-        .skill-item {
-            font-size: clamp(30px, 6vw, 70px);
-        }
-
-        @keyframes scroll {
-            0% { transform: translateX(90%); }
-            100% { transform: translateX(-290%); }
-        }
-
-        .future-content {
-            background: #000;
-            padding: 100px 20px;
-            text-align: center;
-            min-height: 100vh;
-        }
-    </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="cube-background" id="cubeContainer">
-        <div class="cube" id="interactiveCube">
-            <div class="face front"></div>
-            <div class="face back"></div>
-            <div class="face right"></div>
-            <div class="face left"></div>
-            <div class="face top"></div>
-            <div class="face bottom"></div>
-        </div>
+  <!-- ============== 3D MOTIF ============== -->
+  <div class="motif" id="motif" aria-hidden="true">
+    <div class="cube" id="cube">
+      <div class="face f-front"></div>
+      <div class="face f-back"></div>
+      <div class="face f-right"></div>
+      <div class="face f-left"></div>
+      <div class="face f-top"></div>
+      <div class="face f-bottom"></div>
     </div>
-
-    <div class="content-wrapper">
-        <section class="hero">
-            <h1 class="hi-im-david">Hi I’m<br>David</h1>
-            <div class="social-icons">
-                <img id="github" src="./Frame 7.svg" alt="GitHub">
-                <img id="maker-world" src="./maker-world.svg" alt="MakerWorld">
-                <img id="figma" class="figma-icon" src="./Frame 6.svg" alt="Figma">
-            </div>
-        </section>
-
-        <div class="skills-container">
-            <div class="skills-scroller">
-                <div class="skill-item">Coding 🧑‍💻</div>
-                <div class="skill-item">Web design 📊</div>
-                <div class="skill-item" style="margin-top: -50px;"><span style="font-weight: 900; font-size: 110px;">3</span>D printing 🧱</div>
-                <div class="skill-item">Problem solving 🧩</div>
-                <div class="skill-item" style="margin-top: -40px;"><span style="font-weight: 900; font-size: 110px;">3</span>D Modelling 💻</div>
-            </div>
-        </div>
-
-        <section class="future-content">
-            <h2 style="font-size: 50px; color: #7ac2c8;">My Projects</h2>
-            <p style="font-size: 24px; max-width: 600px; opacity: 0.7; line-height: 1.6; margin: 0 auto;">
-                
-            </p>
-        </section>
+    <div class="glasses-motif" id="glasses">
+      <img src="./glasseslogo 1.png" alt="">
     </div>
+  </div>
 
-<script>
-    const cube = document.getElementById('interactiveCube');
-    const cubeContainer = document.getElementById('cubeContainer');
-    let currentX = 0, currentY = 0;
-    let targetX = 0, targetY = 0;
-    let isHovering = false;
-    let idleX = 0, idleY = 0;
+  <!-- ============== NAV ============== -->
+  <nav class="nav" id="nav">
+    <a class="brand" href="#top" aria-label="David Sebbag — home">
+      <img src="./glasseslogo 1.png" alt="">
+      <b>David Sebbag</b>
+      <span class="dot"></span>
+    </a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-    const smoothness = 0.05; 
+  <!-- ============== HERO ============== -->
+  <header class="hero" id="top" data-screen-label="Hero">
+    <p class="kicker">Developer · Maker · Problem-solver</p>
+    <p class="hello">Hi, I'm</p>
+    <h1>David</h1>
+    <p class="lede">I build <strong>web apps, bots, and things you can hold</strong> — from storefronts and payment flows to chess-playing WhatsApp bots and 3D-printed designs.</p>
+    <div class="social">
+      <a id="github" href="https://github.com/davdadev" target="_blank" rel="noopener" aria-label="GitHub"><img src="./Frame 7.svg" alt="GitHub"></a>
+      <a id="maker-world" href="https://makerworld.com/en/@sebbag" target="_blank" rel="noopener" aria-label="MakerWorld"><img src="./maker-world.svg" alt="MakerWorld"></a>
+      <a id="figma" href="https://figma.com/@davidsebbag" target="_blank" rel="noopener" aria-label="Figma"><img src="./Frame 6.svg" alt="Figma"></a>
+    </div>
+    <div class="scroll-cue"><span>Scroll</span><span class="line"></span></div>
+  </header>
 
-    function update() {
-        if (!isHovering) {
-            idleX += 0.3;
-            idleY += 0.4;
-            targetX = idleX;
-            targetY = idleY;
-        }
-        currentX += (targetX - currentX) * smoothness;
-        currentY += (targetY - currentY) * smoothness;
-        cube.style.transform = `rotateX(${currentX}deg) rotateY(${currentY}deg)`;
-        requestAnimationFrame(update);
-    }
-    update();
+  <!-- ============== SKILLS MARQUEE ============== -->
+  <div class="marquee" aria-label="Skills">
+    <div class="marquee-track" id="marqueeTrack"></div>
+  </div>
 
-    window.addEventListener('scroll', () => {
-        const scrollPosition = window.scrollY;
-        const fadeEnd = 600; 
-        let opacity = 1 - (scrollPosition / fadeEnd);
-        if (opacity < 0) opacity = 0;
-        if (opacity > 1) opacity = 1;
-        cubeContainer.style.opacity = opacity;
-    });
+  <!-- ============== ABOUT ============== -->
+  <section class="about" id="about" data-screen-label="About">
+    <div class="wrap">
+      <p class="eyebrow reveal">01 — About</p>
+      <div class="about-grid">
+        <p class="about-statement reveal">
+          I'm a self-taught developer who likes shipping. I move fast from idea to working
+          product — designing the interface, wiring up the backend, and sweating the small
+          interactions until it <em>feels right</em>. When I'm not coding, I'm modelling and
+          printing things in the physical world.
+        </p>
+        <div class="about-meta reveal">
+          <dl>
+            <dt>What I work with</dt>
+            <dd>Web apps · Stripe payments · Automation &amp; bots<br><span>React, Node.js, TypeScript</span></dd>
+          </dl>
+          <dl>
+            <dt>Off-screen</dt>
+            <dd>CAD &amp; 3D modelling<br><span>Designing and printing physical products</span></dd>
+          </dl>
+          <dl>
+            <dt>How I work</dt>
+            <dd>Idea → prototype → ship<br><span>Fast iterations, real users</span></dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    window.addEventListener('mousemove', (e) => {
-        const centerX = window.innerWidth / 2;
-        const centerY = window.innerHeight / 2;
-        const distance = Math.hypot(e.clientX - centerX, e.clientY - centerY);
+  <!-- ============== WORK ============== -->
+  <section class="work" id="work" data-screen-label="Work">
+    <div class="wrap">
+      <p class="eyebrow reveal">02 — Selected work</p>
+      <div class="work-grid">
 
-        if (distance < 500) {
-            isHovering = true;
-            targetX = -(e.clientY - centerY) * 0.2;
-            targetY = (e.clientX - centerX) * 0.2;
-        } else if (isHovering) {
-            isHovering = false;
-            idleX = currentX;
-            idleY = currentY;
-        }
-    });
+        <a class="card reveal" href="https://github.com/Davdadev/3d-printing-store" target="_blank" rel="noopener">
+          <div class="thumb"><span class="idx">01</span><span class="tag">// 3d-gifts store</span></div>
+          <div class="body">
+            <h3>3D Printing Gifts <span class="arrow">↗</span></h3>
+            <p>A full e-commerce store for 3D-printed gifts — product catalog, persistent cart, Stripe checkout, order history and an admin dashboard for inventory.</p>
+            <div class="tags"><span>React</span><span>tRPC</span><span>Stripe</span><span>MySQL</span></div>
+          </div>
+        </a>
 
-    const links = {
-        "github": "https://github.com/davdadev",
-        "maker-world": "https://makerworld.com/en/@user_2466880989",
-        "figma": "https://figma.com/@davidsebbag"
-    };
+        <a class="card reveal" href="https://github.com/Davdadev/whatsapp-chess-bot" target="_blank" rel="noopener">
+          <div class="thumb"><span class="idx">02</span><span class="tag">// whatsapp-chess</span></div>
+          <div class="body">
+            <h3>WhatsApp Chess Bot <span class="arrow">↗</span></h3>
+            <p>Play chess against an AI opponent without leaving WhatsApp. Moves are made through polls, with the live board rendered as an image after every turn.</p>
+            <div class="tags"><span>Node.js</span><span>whatsapp-web.js</span><span>chess.js</span></div>
+          </div>
+        </a>
 
-    Object.keys(links).forEach(id => {
-        const el = document.getElementById(id);
-        if(el) el.onclick = () => window.open(links[id], "_blank");
-    });
-</script>
+        <a class="card reveal" href="https://github.com/Davdadev/Better-Beggars" target="_blank" rel="noopener">
+          <div class="thumb"><span class="idx">03</span><span class="tag">// better-beggars</span></div>
+          <div class="body">
+            <h3>Better Beggars <span class="arrow">↗</span></h3>
+            <p>A donation platform that makes street giving cashless — on-page Stripe payments, per-person QR codes, and a transparent log of recent donors to build trust.</p>
+            <div class="tags"><span>Stripe</span><span>Express</span><span>Node.js</span></div>
+          </div>
+        </a>
 
+        <a class="card reveal" href="https://github.com/Davdadev/3stageplan" target="_blank" rel="noopener">
+          <div class="thumb"><span class="idx">04</span><span class="tag">// 3-stage-plan</span></div>
+          <div class="body">
+            <h3>3-Stage Plan <span class="arrow">↗</span></h3>
+            <p>A marketing site taken from a Figma design to a responsive, production-ready build — clean layout, fast load, true to the original comp.</p>
+            <div class="tags"><span>React</span><span>Vite</span><span>Figma</span></div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== CONTACT ============== -->
+  <section class="contact" id="contact" data-screen-label="Contact">
+    <div class="wrap">
+      <p class="eyebrow reveal" style="justify-content:center;">03 — Contact</p>
+      <h2 class="reveal">Let's build<br><em>something.</em></h2>
+      <p class="reveal">Got an idea, a project, or just want to say hi? I'm always up for building something new.</p>
+      <a class="cta reveal" href="mailto:hello@davidsebbag.com">hello@davidsebbag.com →</a>
+      <div class="social reveal">
+        <a href="https://github.com/davdadev" target="_blank" rel="noopener" aria-label="GitHub"><img src="./Frame 7.svg" alt="GitHub"></a>
+        <a href="https://makerworld.com/en/@sebbag" target="_blank" rel="noopener" aria-label="MakerWorld"><img src="./maker-world.svg" alt="MakerWorld"></a>
+        <a href="https://figma.com/@davidsebbag" target="_blank" rel="noopener" aria-label="Figma"><img src="./Frame 6.svg" alt="Figma"></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FOOTER ============== -->
+  <footer class="footer">
+    <a class="brand" href="#top"><img src="./glasseslogo 1.png" alt=""><b>David Sebbag</b></a>
+    <small>© 2026 — Built from scratch, in the browser.</small>
+    <a class="top" href="#top">Back to top ↑</a>
+  </footer>
+
+  <!-- tweaks mount -->
+  <div id="tweaks-root"></div>
+
+  <script src="site.js"></script>
+
+  <!-- React + Babel (pinned) for the Tweaks panel -->
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="tweaks-app.jsx"></script>
+
+  <!-- skills marquee: built in JS so the loop is seamless -->
+  <script>
+    (function () {
+      const skills = [
+        ["Coding", "🧑‍💻"], ["Web design", "📐"], ["App development", "📱"],
+        ["3D printing", "🧱"], ["3D modelling", "💻"], ["Problem solving", "🧩"], ["Business", "👔"],
+      ];
+      function group() {
+        const frag = document.createDocumentFragment();
+        skills.forEach(([label, emoji]) => {
+          const item = document.createElement("div");
+          item.className = "marquee-item";
+          item.innerHTML = `<span class="sep">◆</span><span>${label} ${emoji}</span>`;
+          frag.appendChild(item);
+        });
+        return frag;
+      }
+      const track = document.getElementById("marqueeTrack");
+      track.appendChild(group());
+      track.appendChild(group()); // duplicate → translateX(-50%) loops seamlessly
+    })();
+  </script>
+
+  <template id="__bundler_thumbnail" data-bg-color="#06080a">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#06080a"/>
+      <g fill="none" stroke="#7ac2c8" stroke-width="6" opacity="0.55">
+        <path d="M470 250 L730 250 L820 180 L560 180 Z"/>
+        <path d="M470 250 L470 540 L730 540 L730 250 Z"/>
+        <path d="M730 250 L820 180 L820 470 L730 540 Z"/>
+      </g>
+      <text x="600" y="430" font-family="Arial Black, system-ui, sans-serif" font-size="150" font-weight="900" fill="#7ac2c8" text-anchor="middle" letter-spacing="-4">DAVID</text>
+    </svg>
+  </template>
+
+  <!-- direct-edit style overrides -->
+  <style id="__om-edit-overrides"></style>
 </body>
 </html>
