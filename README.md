@@ -1,7 +1,7 @@
-##what is it
+## what is it
 this is my personal website used to repreent who i am and my brand
 
-##how
+## how
 the website was made in html css and js
 
 ## AI Declaration
