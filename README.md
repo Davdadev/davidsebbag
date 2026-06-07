@@ -6,8 +6,6 @@ the website was made in html css and js
 
 ## AI Declaration
 
-This is a transparent account of how AI tools were used in building this site. It exists because honesty about process matters — especially when the work is meant to represent what I can actually do.
-
 ### What AI helped with
 
 **Ideation and iteration** — Early design direction was explored through conversation with AI, discussing layout approaches, colour palette logic, and typographic pairings. The final decisions were mine; AI was a sounding board, not a decision-maker.
