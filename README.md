@@ -8,7 +8,7 @@ the website was made in html css and js
 
 ### What AI helped with
 
-Ideation and implentation claude ai was used to code the website, but the ideas, design restrictions, and creative control were all mine.
+Ideation and implementation claude ai was used to code the website, but the ideas, design restrictions, and creative control were all mine.
 
 ---
 ## License
